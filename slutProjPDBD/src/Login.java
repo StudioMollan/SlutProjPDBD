@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.event.*;
 import java.sql.*;
 
 public class Login extends JFrame {
@@ -13,22 +12,27 @@ public class Login extends JFrame {
     JLabel welcome = new JLabel("Please enter username and password below.");
     JButton blogin = new JButton("Login");
     JPanel panel = new JPanel();
-    JTextField inputUser = new JTextField("testAdmin", 15);
-    JPasswordField inputPass = new JPasswordField("456", 15);
-
+    JTextField inputUser = new JTextField("Username", 15);
+    JPasswordField inputPass = new JPasswordField("**********", 15);
+    JLabel info1 = new JLabel("ADMIN:           Username = testAdmin | Password = 456");
+    JLabel info2 = new JLabel("CUSTOMER:     Username = testUser    | Password = 123");
     Login() {
         super("Login Autentification");
-        setSize(500, 100);
+        setSize(500, 150);
         setLocation(500, 20);
         panel.setLayout(null);
         inputUser.setBounds(50, 40, 150, 20);
         inputPass.setBounds(210, 40, 150, 20);
         blogin.setBounds(370, 40, 80, 20);
         welcome.setBounds(120, 10, 500, 20);
+        info1.setBounds(50, 90, 500, 20);
+        info2.setBounds(50, 70, 500, 20);
         panel.add(blogin);
         panel.add(inputUser);
         panel.add(inputPass);
         panel.add(welcome);
+        panel.add(info1);
+        panel.add(info2);
         getContentPane().add(panel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
